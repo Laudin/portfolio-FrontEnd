@@ -1,0 +1,3 @@
+Angular Language Service
+Angular2-Inline
+ESLint + npm i -g eslint

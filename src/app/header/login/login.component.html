@@ -1,0 +1,16 @@
+<div class="login-container">
+   <form class="form">
+      <i id="user" class="fa-solid fa-user-ninja"></i>
+      <i id="back" class="fa-solid fa-user-ninja"></i>
+      <i id="close" class="fa-solid fa-xmark" (click)="this.toggleShow.emit()"></i>
+      <h1>Iniciar sesión</h1>
+      <!-- <label for="email">Email</label> -->
+      <input (change)="handleChange($event)" (focus)="focus($event)" type="email" name="email" id="email" value="{{user.email}}" placeholder="Correo electrónico" required>
+      <p [style.visibility]="error.email ? 'visible' : 'hidden'" class="error hide" id="email-error">email invalido</p>
+      <!-- <label for="password">Contraseña</label> -->
+      <input (change)="handleChange($event)" (focus)="focus($event)" type="password" name="password" id="password" value="{{user.password}}" placeholder="Contraseña" required>
+      <p [style.visibility]="error.password ? 'visible' : 'hidden'" class="error hide" id="password-error">contraseña invalida</p>
+      <button id="login" type="submit" (click)="login($event)">Login</button>
+      <p [style.visibility]="error.credentials ? 'visible' : 'hidden'" class="error hide" id="credentials-error">credenciales incorrectas</p>
+   </form>
+</div>

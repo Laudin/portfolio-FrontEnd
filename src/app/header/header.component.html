@@ -1,0 +1,21 @@
+<div class="top-bar">
+   <a class="logo-container" href="https://argentinaprograma.inti.gob.ar/" target="">
+      <img id="logo" src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1659143423/APLogo-20-20.png" alt="logo" >
+   </a>
+   <div class="user-container">
+      <a class="social" href="https://www.linkedin.com/in/gaston-laudin-2a612b230/" target="_blanck">
+         <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a class="social" href="https://github.com/Laudin" target="_blanck">
+         <i class="fa-brands fa-square-github"></i>
+      </a>
+      <button class="login" (click)="show=!show" (click)="this.toggleEdit.emit()">Login</button>
+   </div>
+</div>
+<div class="banner-container">
+   <div class="buttons" *ngIf="edit">
+      <button *ngIf="true" id="edit"><i class="fa-solid fa-pen"></i></button>
+   </div>
+   <img class="banner" src="https://img3.goodfon.com/wallpaper/nbig/b/db/kv-2-kliment-voroshilov.jpg" alt="banner" >
+</div>
+<app-login *ngIf="show" (toggleShow)="toggleShow()"></app-login>

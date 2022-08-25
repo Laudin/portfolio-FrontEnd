@@ -1,0 +1,17 @@
+<section id="proyectos">
+   <h1 class="section-title">Proyectos</h1>
+   <ul class="lista">
+      <li class="elementos" *ngFor="let elem of dummy_data">
+         <div class="buttons" *ngIf="edit">
+            <button *ngIf="true" id="edit"><i class="fa-solid fa-pen"></i></button>
+            <button *ngIf="false" id="save">Guardar</button>
+            <button *ngIf="false" id="cancel">Reset</button>
+         </div>
+         <h2>{{elem.titulo}}</h2>
+         <p>{{elem.descripcion}}</p>
+         <a href="{{elem.github}}" target="_blank">Github</a>
+         <a *ngIf="elem.view" href="{{elem.view}}" target="_blank">Página</a>
+      </li>
+      <div class="add"><span class="material-symbols-rounded">add</span></div>
+   </ul>
+</section>
