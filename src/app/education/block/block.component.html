@@ -1,0 +1,13 @@
+<div class="buttons" *ngIf="edit">
+   <button *ngIf="true" id="edit"><i class="fa-solid fa-pen"></i></button>
+   <button *ngIf="false" id="save">Guardar</button>
+   <button *ngIf="false" id="cancel">Reset</button>
+</div>
+<div class="exp-logo">
+   <img src={{data.logo}} alt="logo empresa">
+   <div class="fecha">{{data.fecha}}</div>
+</div>
+<div class="exp-info">
+   <h3>{{data.actividad}}</h3>
+   <p>{{data.descripcion}}</p>
+</div>

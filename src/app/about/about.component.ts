@@ -12,7 +12,6 @@ export class AboutComponent implements OnInit {
     title: 'Full Stack Developer Jr.',
     about: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis minima facere, quae illum dicta ab ipsam tenetur accusantium doloribus? Sapiente quo porro modi laudantium ipsa pariatur aliquam quisquam quod qui?'
   }
-  editing = false
 
   handleChange = () => {
     let input = document.getElementById("about-input") as HTMLTextAreaElement
@@ -23,6 +22,8 @@ export class AboutComponent implements OnInit {
   }
 
   @Input() edit!: boolean;
+  editing_info = false
+  editing_about = false
 
   constructor() { }
 

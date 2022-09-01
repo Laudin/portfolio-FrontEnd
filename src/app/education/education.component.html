@@ -3,19 +3,7 @@
 
    <ul class="lista">
       <li class="elementos" *ngFor="let elem of dummy_data">
-         <div class="buttons" *ngIf="edit">
-            <button *ngIf="true" id="edit"><i class="fa-solid fa-pen"></i></button>
-            <button *ngIf="false" id="save">Guardar</button>
-            <button *ngIf="false" id="cancel">Reset</button>
-         </div>
-         <div class="exp-logo">
-            <img src={{elem.logo}} alt="logo empresa">
-            <div class="fecha">{{elem.fecha}}</div>
-         </div>
-         <div class="exp-info">
-            <h3>{{elem.actividad}}</h3>
-            <p>{{elem.descripcion}}</p>
-         </div>
+         <app-block class="block" [edit]="edit" [data]="elem"></app-block>
       </li>
       <div class="add"><span class="material-symbols-rounded">add</span></div>
    </ul>

@@ -1,0 +1,44 @@
+.elementos {
+   position: relative;
+   display: flex;
+   padding-bottom: 25px;
+   margin-bottom: 25px;
+   max-width: 720px;
+}
+.elementos::after {
+   content: "";
+   position: absolute;
+   width: 30%;
+   height: 1px;
+   bottom: 0px;
+   left: 50%;
+   transform: translateX(-50%);
+   border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+.exp-logo {
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+   margin: 0 30px;
+}
+.exp-logo img{
+   margin: auto;
+   width: 100px;
+   object-fit: cover;
+}
+.fecha {
+   text-align: center;
+   font-size: 0.9rem;
+}
+.exp-info {
+
+}
+.exp-info h3{
+   margin-top: 0px;
+}
+.exp-info p{
+
+}
+.buttons {
+   top: -20px;
+}
