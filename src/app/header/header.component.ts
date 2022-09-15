@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   constructor(private api: ApiService) {
     this.api.getAbout().subscribe(res => {
       this.data = { ...res[0] }
-      this.data.banner = 'static/' + this.data.banner
+      this.data.banner = 'https://laudin-portfolio-backend.herokuapp.com/static/' + this.data.banner
     })
   }
 
@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
       this.data.banner = e.target.files[0].name
       this.api.updateAbout(this.data.id, this.data).subscribe(res => {
         console.log(res)
-        this.data.banner = 'static/' + this.data.banner
+        this.data.banner = 'https://laudin-portfolio-backend.herokuapp.com/static/' + this.data.banner
       })
     })
   }

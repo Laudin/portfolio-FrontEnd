@@ -25,7 +25,7 @@ export class AboutComponent implements OnInit {
   constructor(private api: ApiService) {
     this.api.getAbout().subscribe(response => {
       this.data = { ...response[0] }
-      this.data.profile = 'static/' + this.data.profile
+      this.data.profile = 'https://laudin-portfolio-backend.herokuapp.com/static/' + this.data.profile
     })
   }
 
@@ -48,7 +48,7 @@ export class AboutComponent implements OnInit {
 
       this.data.profile = e.target.files[0].name
       this.api.updateAbout(this.data.id, this.data).subscribe(res => {
-        this.data.profile = 'static/' + this.data.profile
+        this.data.profile = 'https://laudin-portfolio-backend.herokuapp.com/static/' + this.data.profile
       })
     })
   }
