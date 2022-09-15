@@ -11,6 +11,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { LoginComponent } from './header/login/login.component';
 import { BlockComponent } from './education/block/block.component';
 
+import { ApiService } from './api.service'
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +27,10 @@ import { BlockComponent } from './education/block/block.component';
     BlockComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,21 +1,23 @@
 <div class="about-container">
+
    <div class="profile-container">
       <div class="buttons" *ngIf="edit">
-         <input type="file">
-         <!-- (click)=input.click() -->
-         <button *ngIf="true" id="edit"><i class="fa-solid fa-pen"></i></button>
+         <button *ngIf="true" id="edit" (click)="handleClick($event)"><i class="fa-solid fa-pen"></i></button>
+         <input type="file" name="profile" (change)="handleFileChange($event)" id="up-profile" accept=".png, .jpg">
       </div>
-      <img class="profile" src="data:image/jpeg;base64,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" alt="profile">
+      <img class="profile" src={{data.profile}} alt="profile">
    </div>
+
    <div class="description container">
       <div class="buttons" *ngIf="edit">
          <button id="edit" (click)="editing_info=true"><i class="fa-solid fa-pen"></i></button>
          <button *ngIf="editing_info" id="save" (click)="editing_info=false">Guardar</button>
          <button *ngIf="editing_info" id="cancel" (click)="editing_info=false">Reset</button>
       </div>
-      <h2 class="name">{{dummy_data.name}}</h2>
-      <h3 class="title">{{dummy_data.title}}</h3>
+      <h2 class="name">{{data.nombre}} {{data.apellido}}</h2>
+      <h3 class="title">{{data.titulo}}</h3>
    </div>
+
    <div class="info">
       <div class="buttons" *ngIf="edit">
          <button id="edit" (click)="editing_about=true"><i class="fa-solid fa-pen"></i></button>
@@ -24,9 +26,9 @@
       </div>
       <div></div>
       <h2>Sobre mi</h2>
-      <p *ngIf="!editing_about" id="about">{{dummy_data.about}}</p>
+      <p *ngIf="!editing_about" id="about">{{data.acerca_de}}</p>
       <div class="textarea-container">
-         <textarea *ngIf="editing_about" class="textarea" id="about-input" [value]="dummy_data.about">{{dummy_data.about}}</textarea>
+         <textarea *ngIf="editing_about" class="textarea" id="about-input" [value]="data.acerca_de">{{data.acerca_de}}</textarea>
       </div>
    </div>
 </div>

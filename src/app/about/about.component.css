@@ -16,6 +16,9 @@
    transform: translate(-50%, -50%);
    z-index: 10;
 }
+.profile-container .buttons input{
+   color: red;
+}
 .profile {
    position: absolute;
    width: 250px;
