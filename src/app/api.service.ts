@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 })
 export class ApiService {
   url: string = 'https://laudin-portfolio-backend.herokuapp.com'
-  //url: string = 'http://localhost:8080'
+  // url: string = 'http://localhost:8080'
 
   headers = new HttpHeaders().set('Content-Type', 'application/json')
   headers2 = new HttpHeaders().set('Content-Type', 'multipart/form-data')

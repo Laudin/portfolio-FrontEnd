@@ -11,13 +11,20 @@
    <div class="description container">
       <div class="buttons" *ngIf="edit">
          <button id="edit" (click)="editing_info=true"><i class="fa-solid fa-pen"></i></button>
-         <button *ngIf="editing_info" id="save" (click)="editing_info=false">Guardar</button>
+         <button *ngIf="editing_info" id="save" (click)="handleChange()" (click)="editing_info=false">Guardar</button>
          <button *ngIf="editing_info" id="cancel" (click)="editing_info=false">Reset</button>
       </div>
-      <h2 class="name">{{data.nombre}} {{data.apellido}}</h2>
-      <h3 class="title">{{data.titulo}}</h3>
+      <div *ngIf="!editing_info" class="info-container">
+         <h2 class="name">{{data.nombre}} {{data.apellido}}</h2>
+         <h3 class="title">{{data.titulo}}</h3>
+      </div>
+      <div *ngIf="editing_info" class="info-input-container">
+         <input type="text" id="name-input" [value]="data.nombre"/>
+         <input type="text" id="title-input" [value]="data.titulo"/>
+      </div>
    </div>
 
+   <!--  -->
    <div class="info">
       <div class="buttons" *ngIf="edit">
          <button id="edit" (click)="editing_about=true"><i class="fa-solid fa-pen"></i></button>

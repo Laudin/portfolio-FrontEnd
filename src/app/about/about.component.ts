@@ -32,11 +32,20 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void { }
 
   handleChange = () => {
-    let input = document.getElementById("about-input") as HTMLTextAreaElement
+    this.editing_info = false
+    this.editing_about = false
+
+    let nameInput = document.getElementById("name-input") as HTMLTextAreaElement
+    let titleInput = document.getElementById("title-input") as HTMLTextAreaElement
+    let aboutInput = document.getElementById("about-input") as HTMLTextAreaElement
     this.data = {
       ...this.data,
-      acerca_de: input.value
+      nombre: nameInput?.value || this.data.nombre,
+      titulo: titleInput?.value || this.data.titulo,
+      acerca_de: aboutInput?.value || this.data.acerca_de
     }
+    console.log(this.data)
+    // this.api.updateAbout(1, this.data).subscribe(res => console.log(res))
   }
 
   handleClick = (e: any) => {
